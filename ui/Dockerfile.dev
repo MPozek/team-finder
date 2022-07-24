@@ -8,10 +8,17 @@ ENV NODE_ENV production
 
 # Thin-install app dependencies
 COPY package.json package-lock.json ./
+
+# Permission fix
+RUN npm config set unsafe-perm true
+
 RUN npm install --silent
+# RUN npm install
 
 # Add app; non-prod files still useful for local dev
 COPY . ./
+
+RUN chown -LR node /app/node_modules
 
 USER node
 
