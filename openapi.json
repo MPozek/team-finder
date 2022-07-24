@@ -393,7 +393,7 @@
         }
       }
     },
-    "/api/users/@me/guilds/248204508960653312/member": {
+    "/api/users/@me/guilds/825085959132807269/member": {
       "get": {
         "tags": [
           "Discord"

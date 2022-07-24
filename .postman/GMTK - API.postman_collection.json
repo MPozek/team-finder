@@ -437,7 +437,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://discordapp.com/api/users/@me/guilds/248204508960653312/member",
+							"raw": "https://discordapp.com/api/users/@me/guilds/825085959132807269/member",
 							"protocol": "https",
 							"host": [
 								"discordapp",
@@ -448,7 +448,7 @@
 								"users",
 								"@me",
 								"guilds",
-								"248204508960653312",
+								"825085959132807269",
 								"member"
 							]
 						}
