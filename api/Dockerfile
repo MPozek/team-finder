@@ -34,7 +34,7 @@ RUN ./gradlew build --build-cache
 RUN mv /opt/code/build/distributions/com.gmtkgamejam.api*.zip ./api.zip
 RUN unzip api.zip && mv com.gmtkgamejam* api
 
-EXPOSE 8080
+# EXPOSE 3000
 
 # Start application from /bin/bash script
 CMD ["/opt/code/api/bin/com.gmtkgamejam.api"]
