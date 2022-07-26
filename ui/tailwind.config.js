@@ -20,8 +20,8 @@ module.exports = {
         'lightbg-highlight': colors.gray["500"],
         primary: "#60c2a5",
         'primary-highlight': "#60c2a5",
-        accent1: colors.fuchsia["500"],
-        accent2: colors.yellow["500"],
+        accent1: "#60c2a5",
+        accent2: "#60c2a5",
       },
       typography: (theme) => ({
         DEFAULT: {
