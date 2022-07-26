@@ -74,15 +74,9 @@ export const FAQ = () => {
               for the GDL Game Jam! Browse the post list or make a post of your own!`}
             </p>
             <p className="pt-4">
-              <span className="italic">This is not run by Mark Brown!</span>{" "}
-              Mark gave his blessing for us to use his shiny logos and branding,
-              but other than that Mark isn&#39;t directly involved in the
-              development of this website.
-            </p>
-            <p className="pt-4">
-              This is a semi-official fan project aimed at supporting the jam in
-              becoming more community-driven - please do not contact Mark with
-              questions about the Team Finder!
+              This is a fork of the GMTK team finder, many thanks to the devs for open-sourcing their version!
+              Give them some love here: <Link className="hover:underline cursor-pointer" to="https://github.com/GameMakersToolkit/team-finder"></Link>
+              [bugs are probably ours, so report them to us]
             </p>
 
           </FAQHeading>

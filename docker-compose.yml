@@ -15,17 +15,28 @@ services:
     expose:
       - "8080"
 
-  debug:
-    container_name: team-finder-debug-api
-    build: ./debug_api
-    restart: on-failure
-    ports:
-      - "80:80"
-    expose:
-      - "80"
-    command: python ./server.py 80
+#  debug:
+#    container_name: team-finder-debug-api
+#    build: ./debug_api
+#    restart: on-failure
+#    ports:
+#      - "80:80"
+#    expose:
+#      - "80"
+#    command: python ./server.py 80
 
-  ui:
+#  ui-prod:
+#    container_name: team-finder-ui-prod
+#    build: ./ui-prod
+#    restart: on-failure
+#    ports:
+#      - "3000:3000"
+#    expose:
+#      - "3000"
+#    depends_on:
+#      - "nginx"
+
+  ui-dev:
     container_name: team-finder-ui
     build:
       context: ./ui
@@ -52,9 +63,6 @@ services:
       - ./logs/access.log:/logs/access.log
     ports:
       - "80:80"
-    depends_on:
-      - "ui"
-      - "api"
 
   db:
     image: mongo
