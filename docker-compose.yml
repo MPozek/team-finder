@@ -29,7 +29,7 @@ services:
     container_name: team-finder-ui
     build:
       context: ./ui
-      dockerfile: Dockerfile.dev
+#      dockerfile: Dockerfile.dev
     user: 0:0
     restart: unless-stopped
     ports:
