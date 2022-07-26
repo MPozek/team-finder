@@ -19,14 +19,5 @@ export const Onboarding: React.FC = () => {
     </div>
   )
 
-  const userIsInDiscordServer = userInfo.data?.isInDiscordServer;
-  if (!userIsInDiscordServer) return (
-    <div className={onboardingMessageBoxStyle}>
-      <p className="text-center">You need to be in the GDL Discord server to contact other users -
-        <a href={discordInviteUrl} className="font-bold underline">click here to join!</a>
-      </p>
-    </div>
-  )
-
   return null
 }

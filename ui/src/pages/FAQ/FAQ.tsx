@@ -8,7 +8,7 @@ const currentYear = new Date().getFullYear();
 
 const FAQHeading: React.FC<{ question: string }> = ({ question, children }) => {
   return (
-    <div className="grid place-items-center bg-gray-900">
+    <div className="grid place-items-center">
       <div className="py-12 w-5/6">
         <h2 className="text-white-900 font-bold text-4xl">{question}</h2>
         {children}
