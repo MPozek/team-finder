@@ -15,15 +15,15 @@ services:
     expose:
       - "8080"
 
-#  api:
-#    container_name: team-finder-debug-api
-#    build: ./debug_api
-#    restart: on-failure
-#    ports:
-#      - "8080:8080"
-#    expose:
-#      - "8080"
-#    command: python ./server.py 8080
+  debug:
+    container_name: team-finder-debug-api
+    build: ./debug_api
+    restart: on-failure
+    ports:
+      - "80:80"
+    expose:
+      - "80"
+    command: python ./server.py 80
 
   ui:
     container_name: team-finder-ui
@@ -32,6 +32,8 @@ services:
 #      dockerfile: Dockerfile.dev
     user: 0:0
     restart: unless-stopped
+#    volumes:
+#      -./webroot:./public
     ports:
       - "3000:3000"
     env_file:

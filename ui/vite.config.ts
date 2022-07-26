@@ -9,6 +9,10 @@ export default defineConfig(({ mode }) => {
       host: "0.0.0.0",
       port: 3000,
     },
+    preview: {
+      host:"0.0.0.0",
+      port:3000
+    },
     plugins: [react()],
     build: {
       sourcemap: mode === "production",
