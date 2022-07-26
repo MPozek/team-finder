@@ -25,4 +25,4 @@ USER node
 # EXPOSE 80
 
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
-CMD ["npm", "run", "prod"]
+CMD ["npm", "run", "dev"]
