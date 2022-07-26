@@ -4,4 +4,7 @@ COPY init-mongo.js data.json init.sh /
 
 RUN ["chmod", "+x", "/init.sh"]
 
-ENTRYPOINT ["/init.sh"]
+#ENV ME_CONFIG_MONGODB_ADMINUSERNAME=${ME_CONFIG_MONGODB_ADMINUSERNAME}
+
+ENTRYPOINT /init.sh ${MONGO_USERNAME} ${MONGO_PASSWORD}
+#ENTRYPOINT echo "Hello " ${MONGO_USERNAME}

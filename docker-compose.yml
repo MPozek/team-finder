@@ -7,7 +7,7 @@ services:
   api:
     container_name: team-finder-api
     build: ./api
-    restart: on-failure
+    restart: unless-stopped
     ports:
       - "8080:8080"
     env_file:
@@ -15,13 +15,23 @@ services:
     expose:
       - "8080"
 
+#  api:
+#    container_name: team-finder-debug-api
+#    build: ./debug_api
+#    restart: on-failure
+#    ports:
+#      - "8080:8080"
+#    expose:
+#      - "8080"
+#    command: python ./server.py 8080
+
   ui:
     container_name: team-finder-ui
     build:
       context: ./ui
       dockerfile: Dockerfile.dev
     user: 0:0
-    restart: on-failure
+    restart: unless-stopped
     ports:
       - "3000:3000"
     env_file:
@@ -47,25 +57,28 @@ services:
   db:
     image: mongo
     restart: always
-#    volumes:
-#      - mongodata:/data/db:ro
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_USERNAME: ${ME_CONFIG_MONGODB_ADMINUSERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${ME_CONFIG_MONGODB_ADMINPASSWORD}
     ports:
-      - "27017:27017"
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - ./mongo/data:/data/db
 
   db-seed:
     build: ./db/seed
+    environment:
+      MONGO_USERNAME: ${ME_CONFIG_MONGODB_ADMINUSERNAME}
+      MONGO_PASSWORD: ${ME_CONFIG_MONGODB_ADMINPASSWORD}
     links:
       - db
 
   db-viewer:
     image: mongo-express
-    restart: always
+    restart: on-failure
     ports:
       - "8081:8081"
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
-      ME_CONFIG_MONGODB_URL: mongodb://root:example@db:27017/
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${ME_CONFIG_MONGODB_ADMINUSERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${ME_CONFIG_MONGODB_ADMINPASSWORD}
+      ME_CONFIG_MONGODB_URL: ${ME_CONFIG_MONGODB_URL}
