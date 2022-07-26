@@ -35,18 +35,18 @@ export const IncorrectPermsSetModal: React.FC<Props> = ({ isModalOpen }) => {
       </h3>
       <p>
         Your privacy settings mean other jam participants can&apos;t message you
-        directly. You need to allow DMs from other members of the GMTK server
+        directly. You need to allow DMs from other members of the GDL server
         before you can create a post.
       </p>
 
       <div className="flex items-start">
         <div className={stepImageStyles}>
           <p className="mb-2 text-sm font-italics text-center">
-            1: Open the GMTK Discord server
+            1: Open the GDL Discord server
           </p>
           <img
             src={step1Image}
-            alt="Open the GMTK Discord server"
+            alt="Open the GDL Discord server"
             style={{ width: "90%", margin: "0 auto" }}
           />
         </div>

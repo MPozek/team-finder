@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "f33fe709-5d26-4b3f-a287-b5bb90d34d6a",
-		"name": "GMTK - API",
+		"name": "GDL - API",
 		"description": "The Team Finder API handles the creation, management and administration of Teams within the project.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "17266132"
@@ -422,7 +422,7 @@
 					"response": []
 				},
 				{
-					"name": "GMTK Server User Info",
+					"name": "GDL Server User Info",
 					"request": {
 						"auth": {
 							"type": "bearer",

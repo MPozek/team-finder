@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "GMTK - API",
+    "title": "GDL Team Finder - API",
     "description": "The Team Finder API handles the creation, management and administration of Teams within the project.",
     "version": "1.0.0"
   },
@@ -398,7 +398,7 @@
         "tags": [
           "Discord"
         ],
-        "summary": "GMTK Server User Info",
+        "summary": "GDL Server User Info",
         "security": [
           {
             "bearerAuth": []

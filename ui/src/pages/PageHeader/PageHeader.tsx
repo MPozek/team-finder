@@ -63,7 +63,7 @@ export const PageHeader: React.FC = () => {
           <img
             src="/logos/header.png"
             width={100}
-            alt={"GMTK Game Jam 2022 Team Finder"}
+            alt={"GDL Game Jam Team Finder"}
           />
         </Link>
         {shouldShowHorizontalLinks && (
