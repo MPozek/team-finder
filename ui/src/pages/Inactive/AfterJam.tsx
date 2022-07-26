@@ -14,7 +14,7 @@ export const AfterJam: React.FC = () => {
         <img
           className="block"
           style={{margin: "0 auto"}}
-          src="/logos/header.png"
+          src="/logos/gdl_logo.png"
           width={400}
           alt={"GDL Game Jam Team Finder"}
         />

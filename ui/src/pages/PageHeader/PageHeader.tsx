@@ -56,12 +56,12 @@ export const PageHeader: React.FC = () => {
   }
 
   return (
-    <div className="bg-black h-full mx-auto">
+    <div className="bg-clear h-full mx-auto">
       {/* Static Inline Header */}
-      <div className="flex flex-cols-2 border-b-2">
+      <div className="flex flex-cols-2">
         <Link to="/">
           <img
-            src="/logos/header.png"
+            src="/logos/gdl_logo.png"
             width={100}
             alt={"GDL Game Jam Team Finder"}
           />
