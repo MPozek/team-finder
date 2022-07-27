@@ -1,5 +1,6 @@
 package com.gmtkgamejam.routing;
 
+import com.gmtkgamejam.Config
 import com.gmtkgamejam.models.BanUnbanUserDto
 import com.gmtkgamejam.models.BannedUser
 import com.gmtkgamejam.models.PostItem
@@ -21,7 +22,12 @@ import org.litote.kmongo.gt
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+
 fun Application.configureAdminRouting() {
+
+    val logger: Logger = LoggerFactory.getLogger(javaClass)
 
     val service = PostService()
     val adminService = AdminService()
@@ -31,6 +37,9 @@ fun Application.configureAdminRouting() {
             route("/admin") {
                 route("/reports") {
                     get {
+			logger.error("Hello")
+                        logger.error(Config.getList("jam.adminIds").joinToString())
+
                         val filters = mutableListOf(PostItem::deletedAt eq null, PostItem::reportCount gt 0)
                         call.respond(service.getPosts(and(filters), descending(PostItem::reportCount)))
                     }
