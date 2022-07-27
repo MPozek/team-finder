@@ -75,7 +75,7 @@ export const FAQ = () => {
             </p>
             <p className="pt-4">
               This is a fork of the GMTK team finder, many thanks to the devs for open-sourcing their version!
-              Give them some love here: <Link className="hover:underline cursor-pointer" to="https://github.com/GameMakersToolkit/team-finder"></Link>
+              <Link className="hover:underline cursor-pointer" to="https://github.com/GameMakersToolkit/team-finder">Give them some love here!</Link>
               [bugs are probably ours, so report them to us]
             </p>
 

@@ -23,12 +23,13 @@ class DiscordBot {
 
     init {
         val token = Config.getString("bot.token")
+        val botChannel = Config.getString("bot.channel")
         val builder = DiscordApiBuilder().setToken(token)
         try {
             api = builder.login().join()
 
             // This is horrific, but it works for now!
-            channel = api.channels.filter { it.asServerChannel().get().name == "jam-team-notifs" }[0].asServerTextChannel().get()
+            channel = api.channels.filter { it.asServerChannel().get().name == botChannel }[0].asServerTextChannel().get()
             logger.info("Discord bot is online and ready for action!")
         } catch (ex: Exception) {
             logger.warn("Discord bot could not be initialised - continuing...")

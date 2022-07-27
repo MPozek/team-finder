@@ -17,9 +17,6 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 fun Application.configureAuthRouting() {
-
-    val logger: Logger = LoggerFactory.getLogger(javaClass)
-
     val service = AuthService()
 
     routing {
@@ -52,9 +49,6 @@ fun Application.configureAuthRouting() {
                     val redirectTarget = Config.getString("ui.host")
                     call.respondRedirect("$redirectTarget/login/authorized?token=$token")
                 }
-                
-                logger.error("Hello")
-                logger.error(Config.getList("jam.adminIds")[0])
             }
         }
     }
