@@ -40,9 +40,21 @@ class DiscordBot {
         val recipient: User = api.getUserById(recipientUserId).await()
         val sender: User = api.getUserById(senderUserId).await()
 
-        val messageContents = "Hey ${recipient.mentionTag}, ${sender.mentionTag} wants to get in contact about your Team Finder post!"
+        // Create the embed
+        EmbedBuilder embed = new EmbedBuilder()
+            .setTitle(recipient.name)
+            .setDescription("Hey ${recipient.mentionTag}, ${sender.mentionTag} wants to get in contact about your Team Finder post!")
+            .setAuthor(sender.mentionTag, null, recipient.avatar.url)
+            .setColor(Color.GREEN)
+            .setFooter("https://team-finder.gamedevleague.com/", "https://team-finder.gamedevleague.com/");
+
+        // Send the embed
+        channel.sendMessage(embed);
+
+
+        //val messageContents = "Hey ${recipient.mentionTag}, ${sender.mentionTag} wants to get in contact about your Team Finder post!"
         // TODO: Validate message actually sent, give error otherwise
-        channel.sendMessage(messageContents).await()
+        //channel.sendMessage(messageContents).await()
 
         return true
     }
