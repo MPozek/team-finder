@@ -7,6 +7,7 @@ import org.javacord.api.DiscordApiBuilder
 import org.javacord.api.entity.channel.ServerTextChannel
 import org.javacord.api.entity.message.Message
 import org.javacord.api.entity.message.MessageBuilder
+import org.javacord.api.entity.message.embed.EmbedBuilder
 import org.javacord.api.entity.user.User
 import org.javacord.api.exception.DiscordException
 import org.javacord.api.exception.MissingPermissionsException
@@ -41,11 +42,11 @@ class DiscordBot {
         val sender: User = api.getUserById(senderUserId).await()
 
         // Create the embed
-        EmbedBuilder embed = new EmbedBuilder()
+        val embed = EmbedBuilder()
             .setTitle(recipient.name)
             .setDescription("Hey ${recipient.mentionTag}, ${sender.mentionTag} wants to get in contact about your Team Finder post!")
-            .setAuthor(sender.mentionTag, null, recipient.avatar.url)
-            .setColor(Color.GREEN)
+            .setAuthor(sender.mentionTag, null, recipient.avatar.url.toString())
+            //.setColor(Color.GREEN) requires java.awt.Color
             .setFooter("https://team-finder.gamedevleague.com/", "https://team-finder.gamedevleague.com/");
 
         // Send the embed
