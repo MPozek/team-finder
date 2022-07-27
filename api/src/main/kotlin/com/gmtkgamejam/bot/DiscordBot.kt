@@ -45,7 +45,7 @@ class DiscordBot {
         val embed = EmbedBuilder()
             //.setTitle(recipient.name)
             .setDescription("**Hey ${recipient.mentionTag}**\n${sender.mentionTag} wants to get in contact about your Team Finder post, DM them!")
-            .setAuthor(recipient.name, "https://team-finder.gamedevleague.com/", recipient.avatar.url.toString())
+            .setAuthor(sender.name, "https://team-finder.gamedevleague.com/", sender.avatar.url.toString())
             
             //.setColor(Color.GREEN) requires java.awt.Color
             .setFooter("https://team-finder.gamedevleague.com/");
